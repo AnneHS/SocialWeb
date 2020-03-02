@@ -1,5 +1,7 @@
 import re
 import pandas as pd
+import matplotlib.pyplot as plt
+from collections import Counter
 from textblob import TextBlob
 '''
 Sentiment analysis of PizzaHut csv using textblob
@@ -39,6 +41,41 @@ def analysis(tweets):
 
     return tweetsList
 
+def plot_sentiment(tweetText, tweets):
+
+    '''
+    Plot histogram for polarity score and bar plot for the sentiment analysis
+    categorization (positive, neutral, negative)
+    '''
+
+    # Clean & get sentiment values
+    cleaned_tweets = [clean_tweet(tweet) for tweet in tweetText]
+    sentiment_objects = [TextBlob(tweet) for tweet in cleaned_tweets]
+    sentiment_values = [[tweet.sentiment.polarity, str(tweet)] for tweet in sentiment_objects]
+
+    # Dataframe
+    sentiment_df = pd.DataFrame(sentiment_values, columns=["polarity", "tweet"])
+    sentiment_df.head()
+
+    # Plot histogram of the polarity values
+    fig, ax = plt.subplots(figsize=(8, 6))
+    sentiment_df.hist(bins=[-1, -0.75, -0.5, -0.25, 0.25, 0.5, 0.75, 1],
+                 ax=ax,
+                 color="purple")
+
+    plt.title("Sentiments from Tweets on Pizza Hut")
+    plt.show()
+
+    categorized_tweets = [tweet['sentiment'] for tweet in tweets]
+    #categories=['positive', 'neutral', 'negative']
+    categorie_counts = Counter(categorized_tweets)
+    df = pd.DataFrame.from_dict(categorie_counts, orient='index')
+    df.plot(kind='bar')
+    plt.show()
+
+
+
+# Sentiment analysis
 tweets=analysis(tweetText)
 
 print('Number of tweets: {} '.format(len(tweets)))
@@ -62,3 +99,6 @@ for tweet in ptweets[:10]:
 print("\n\nNegative tweets:")
 for tweet in ntweets[:10]:
     print(tweet['text'])
+
+# Plot sentiment analysis
+plot_sentiment(tweetText, tweets)
