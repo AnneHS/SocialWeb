@@ -34,13 +34,14 @@ def analysis(tweets):
         # get sentiment
         sentiment=get_tweet_sentiment(cl_tweet)
         parsed_tweet['sentiment']=sentiment
-        
+
         tweetsList.append(parsed_tweet)
 
     return tweetsList
 
 tweets=analysis(tweetText)
 
+print('Number of tweets: {} '.format(len(tweets)))
 # percentage of positive tweets
 ptweets = [tweet for tweet in tweets if tweet['sentiment'] == 'positive']
 print("Positive tweets percentage: {} %".format(100*len(ptweets)/len(tweets)))
