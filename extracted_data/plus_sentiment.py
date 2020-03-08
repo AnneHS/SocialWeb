@@ -6,7 +6,8 @@ from textblob import TextBlob
 '''
 Sentiment analysis of PizzaHut csv using textblob
 '''
-data = pd.read_csv('week2pizzahut_data.csv', engine='python', names=['time', 'id', 'text'], header=None)
+filePath = './week1_data/week1(24_01)pizzahut_data.csv'
+data = pd.read_csv(filePath, sep=";", engine='python', names=['time', 'id', 'text'], header=None)
 tweetText = data['text']
 print(tweetText)
 sentiment_list = []
@@ -50,7 +51,7 @@ def analysis(tweets):
 tweets = analysis(tweetText)
 data['sentiment'] = sentiment_list
 
-with open("week2pizzahut_data.csv", 'w') as write_csv:
+with open(filePath, 'w') as write_csv:
     write_csv.write(data.to_csv(sep='\t', index=False))
 
 
