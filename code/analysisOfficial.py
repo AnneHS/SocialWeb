@@ -153,3 +153,5 @@ plt.ylabel('Like count',fontsize=13)
 plotName = brand +'_likeCount.png'
 plt.savefig(os.path.join(plotPath, plotName))
 plt.show()
+
+# TODO: write all info to csv-file => needed for comparison
