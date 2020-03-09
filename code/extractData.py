@@ -8,6 +8,10 @@ import twitter
 import csv
 from pathlib import Path
 
+'''
+Extract twitter data
+'''
+
 print("This computer is running on Python " + platform.python_version())
 assert sys.version_info >= (3, 6)
 

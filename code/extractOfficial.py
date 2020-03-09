@@ -10,16 +10,27 @@ from datetime import datetime, date, time, timedelta
 from tweepy import Cursor
 import re
 
+'''
+Extracts tweets from the official account and writes the cleaned
+data to a csv-file.
+
+Instructions: Change the parameter variables to specify the dates, the name of
+the official account, the week ('week1', 'week2'  etc.) and the name of the
+written csv-file.
+
+The csv-file is saved in ../SocialWeb/data/weeki
+'''
+
 def clean_tweet(tweet):
     return ' '.join(re.sub("(@[A-Za-z0-9]+)|([^0-9A-Za-z \t])|(\w+:\/\/\S+)", "", tweet).split())
 
-
-# params
+# parameters
 date_since = '2020-02-21'
 date_until = '2020-03-03'
-account_list = ["pizzahut"]
-week = 'week1'
+brand = 'pizzahut'
+week = 'week1' #'week2', 'week3'
 csvName = 'testOfficial.csv'
+account_list = [brand]
 
 # path for csv file
 csvDirectory = '..//data//' + week + '//' + csvName

@@ -6,10 +6,20 @@ from collections import Counter
 from textblob import TextBlob
 
 '''
-Sentiment analysis of PizzaHut csv using textblob
+Sentiment analysis using textblob.
+Reads twitter data from a saved csv file and performs sentiment analysis using
+textblob. Two plots are created: (i) polarity score histogram, (ii) sentimen
+barchart (categories: negative, neutral, positive).
+
+Instructions
+Specify two parameters: (i) the filename (e.g. test.csv) for the csv-file that
+contains the data that you want to analyze, (ii) the week (e.g. week1) which
+is used to find the correct directory.
+
+The plots are saved to: ../SocialWeb/plots/weeki
 '''
 
-# parameters: csv filename + csv folder
+# parameters
 fileName= 'test.csv'  #'week1(24_01)dominos_data.csv'
 week = 'week1'
 
@@ -92,7 +102,7 @@ def plot_sentiment(tweetText, tweets):
     plt.savefig(os.path.join(plotPath, plotName))
     plt.show()
 
-    # Plot barplot of sentiment analysis 
+    # Plot barplot of sentiment analysis
     categorized_tweets = [tweet['sentiment'] for tweet in tweets]
     categorie_counts = Counter(categorized_tweets)
     df = pd.DataFrame.from_dict(categorie_counts, orient='index')
