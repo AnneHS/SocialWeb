@@ -8,26 +8,32 @@ import matplotlib.pyplot as plt
 Analyze official tweets
 Analyzes tweets from official account. Produces three barcharts: (i) nr. of
 tweets per weekday, (ii) nr. of retweets per weekday, (iii) number of likes
-per weekday
+per weekday. Information is written to a csv-file and stored in the data folder
+for the corresponding week.
 
 Instructions
-Specify three parameters before running this file: (i) the filename of the csv-
-file that contains the data of the official twitter acount, (ii) the week that
-needs to be analyzed, (iii) the brand name.
+Specify four parameters before running this file:
+    (i) the filename of the csv-file that contains the data of the official
+        twitter acount;
+    (ii) the week for which you want to run the analysis;
+    (iii) the brand name ('pizzahut', 'dominos')
+    (iv) the name of the CSV output file.
 
 The plots are saved to: ../SocialWeb/plots/weeki
+The csv file is saved to: ../SocialWeb/data/weeki
 '''
 # parameters
 fileName='testOfficial.csv'
 week = 'week1' #'week2', 'week3'
 brand = 'test' #pizzahut, dominos
+outputName = 'OfficialAnalysisTest.csv'
 
 # get csv path
 filePath='..//data//' + week + '//' + fileName
 fileDir = os.path.dirname(os.path.realpath('__file__'))
 csvPath = os.path.join(fileDir, filePath) #'../data/test.csv')
 csvPath = os.path.abspath(os.path.realpath(csvPath))
-print(csvPath)
+#print(csvPath)
 
 # where to save the plots
 filePath='..//plots//' + week
@@ -45,6 +51,12 @@ for i in range(len(dates)):
     ans = date(year, month, day)
     weekday.append(ans.strftime("%A"))
 df['Weekday']=weekday
+
+# dictionary used for csv/dataframe
+tweet_count = {'Monday':0, 'Tuesday':0, 'Wednesday':0, 'Thursday':0,
+            'Friday':0, 'Saturday':0, 'Sunday':0}
+for entry in weekday:
+    tweet_count[entry]+=1
 
 # Plot bar chart: number of tweets for each day of the week
 plt.figure(figsize=(8,6),dpi=80)
@@ -94,7 +106,7 @@ retweet_count['Thursday'] = Thursday_retweet
 retweet_count['Friday'] = Friday_retweet
 retweet_count['Saturday'] = Saturday_retweet
 retweet_count['Sunday'] = Sunday_retweet
-print(retweet_count)
+#print(retweet_count)
 
 # Plot bar chart of nr. of retweets per weekday
 plt.figure(figsize=(8,6),dpi=80)
@@ -143,7 +155,7 @@ like_count['Friday'] = Friday_like
 like_count['Saturday'] = Saturday_like
 like_count['Sunday'] = Sunday_like
 
-print(like_count)
+#print(like_count)
 
 plt.figure(figsize=(8,6),dpi=80)
 plt.bar(range(len(like_count)), list(like_count.values()), align='center')
@@ -154,4 +166,21 @@ plotName = brand +'_likeCount.png'
 plt.savefig(os.path.join(plotPath, plotName))
 plt.show()
 
-# TODO: write all info to csv-file => needed for comparison
+
+# SAVE TO CSV
+
+# Dictionary for analysis: nr. of tweets, retweets and likes for each weekday
+index_list=['Tweets', 'Retweets', 'Likes']
+df=pd.DataFrame([tweet_count, retweet_count, like_count], columns=retweet_count.keys())
+df.index=index_list
+df.to_csv()
+print(csvPath)
+
+# Get csv path: where data is stored
+filePath='..//data//' + week + '//' + outputName
+fileDir = os.path.dirname(os.path.realpath('__file__'))
+csvPath = os.path.join(fileDir, filePath) #'../data/test.csv')
+csvPath = os.path.abspath(os.path.realpath(csvPath))
+
+# Create csv
+df.to_csv(csvPath)
