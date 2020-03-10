@@ -80,3 +80,5 @@ ax.set_xticklabels(labels)
 ax.set_ylabel('Likes')
 ax.legend()
 plt.show()
+
+#TODO: SAVE PLOTS
