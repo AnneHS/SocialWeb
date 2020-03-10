@@ -10,7 +10,20 @@ from pathlib import Path
 
 '''
 Extract twitter data
+Extracts the twitter data for given search time, between specified dates and
+writes the data to a csv-file.
+
+Instructions
+Specify four parameters before running this file.
+    (i) search_words (i.e. 'pizzahut', 'dominos')
+    (ii) date_since (extract date from this date...)
+    (iii) date_until (... until this date)
+    (iv) week that is extracted (i.e. 'week1')
+
+The csv file is saved to: ../SocialWeb/data/weeki
 '''
+
+
 
 print("This computer is running on Python " + platform.python_version())
 assert sys.version_info >= (3, 6)
@@ -20,6 +33,7 @@ search_words = 'pizzahut' #pizzahut, dominos
 date_since = '2020-03-08'
 date_until = '2020-03-09'
 week= 'week1' #'week2', 'week3'
+
 csvName='..//data//' + week + '//test.csv'
 
 # csv path

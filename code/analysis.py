@@ -12,9 +12,10 @@ textblob. Two plots are created: (i) polarity score histogram, (ii) sentimen
 barchart (categories: negative, neutral, positive).
 
 Instructions
-Specify two parameters: (i) the filename (e.g. test.csv) for the csv-file that
-contains the data that you want to analyze, (ii) the week (e.g. week1) which
-is used to find the correct directory.
+Specify two parameters:
+    (i) the filename (e.g. test.csv) for the csv-file that
+        contains the data that you want to analyze;
+    (ii) the week (e.g. week1) which (used to find the correct directory).
 
 The plots are saved to: ../SocialWeb/plots/weeki
 '''
