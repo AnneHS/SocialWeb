@@ -23,17 +23,19 @@ The plots are saved to: ../SocialWeb/plots/weeki
 The csv file is saved to: ../SocialWeb/data/weeki
 '''
 # parameters
-fileName='testOfficial.csv'
+fileName=  'PizzaHutOfficial24-02_01-03.csv'         #'DominosOfficial24-02_01-03.csv' , 'PizzaHutOfficial24-02_01-03.csv'
 week = 'week1' #'week2', 'week3'
-brand = 'test' #pizzahut, dominos
-outputName = 'OfficialAnalysisTest.csv'
+brand = 'pizzahut' #pizzahut, dominos
+outputName = brand + '_analysis_'+ week + '.csv'
+
+#'OfficialAnalysisTest.csv'
 
 # get csv path
 filePath='..//data//' + week + '//' + fileName
 fileDir = os.path.dirname(os.path.realpath('__file__'))
 csvPath = os.path.join(fileDir, filePath) #'../data/test.csv')
 csvPath = os.path.abspath(os.path.realpath(csvPath))
-#print(csvPath)
+print(csvPath)
 
 # where to save the plots
 filePath='..//plots//' + week
@@ -43,7 +45,9 @@ plotPath = os.path.abspath(os.path.realpath(plotPath))
 
 # NUMBER OF TWEETS PER WEEKDAY
 df = pd.read_csv(csvPath)
+df.columns=['Time','Post_id','Tweet','Retweet count','Like count'] # needed because some of the older csv-files don't have headers
 dates = df['Time']
+
 weekday=[]
 for i in range(len(dates)):
     dt = dates[i][:10]
