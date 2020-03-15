@@ -99,7 +99,7 @@ def plot_sentiment(tweetText, tweets):
                  color="purple")
 
     plt.title("Sentiments from Tweets on Pizza Hut")
-    plotName = 'polarity.png'
+    plotName = 'Dominos_polarity.png'
     plt.savefig(os.path.join(plotPath, plotName))
     plt.show()
 
