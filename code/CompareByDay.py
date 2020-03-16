@@ -23,7 +23,7 @@ The plots are saved to: ../SocialWeb/plots/weeki
 def Analyse(week, fileName):
     # read file
     filePath = '..//data//' + week + '//' + fileName
-    rawData = pd.read_csv(filePath, sep=';')
+    rawData = pd.read_csv(filePath, sep=';', error_bad_lines=False)
     data = rawData
 
     # set time to weekdays - Monday to Friday
@@ -60,9 +60,9 @@ def Analyse(week, fileName):
 
     # Get weekday for negative tweets
     negTweets = data.loc[data['sentiment'] == -1]
-    dates = posTweets['time']
+    dates2 = negTweets['time']
     weekday=[]
-    for date in dates:
+    for date in dates2:
         dt=date[:10]
         year, month, day = (int(x) for x in dt.split('-'))
         ans = datetime.date(year, month, day)
@@ -78,15 +78,10 @@ def Analyse(week, fileName):
 
 
 # Change week and filename here
+# Parameters
 week = 'week2'
-
 fileNameDominos = 'week2(02_08)dominos_data.csv'
 fileNamePizzaHut = 'week2(02_08)pizzahut_data.csv'
-
-# Parameters
-week = 'week1'
-fileNameDominos = 'week1(24_01)dominos_data.csv'
-fileNamePizzaHut = 'week1(24_01)pizzahut_data.csv'
 
 
 # Get Tweet nfo
