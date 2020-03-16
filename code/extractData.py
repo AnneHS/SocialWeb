@@ -30,9 +30,9 @@ assert sys.version_info >= (3, 6)
 
 # parameters
 search_words = 'pizzahut' #pizzahut, dominos
-date_since = '2020-03-08'
-date_until = '2020-03-09'
-week= 'week1' #'week2', 'week3'
+date_since = '2020-03-09'
+date_until = '2020-03-16'
+week= 'week3' #'week2', 'week3'
 
 csvName='..//data//' + week + '//test.csv'
 
