@@ -23,8 +23,8 @@ The plots are saved to: ../SocialWeb/plots/weeki
 The csv file is saved to: ../SocialWeb/data/weeki
 '''
 # parameters
-fileName=  'PizzaHutOfficial24-02_01-03.csv'         #'DominosOfficial24-02_01-03.csv' , 'PizzaHutOfficial24-02_01-03.csv'
-week = 'week1' #'week2', 'week3'
+fileName=  'PizzaHutOfficial02-03_08-03.csv'   #'DominosOfficial24-02_01-03.csv' , 'PizzaHutOfficial24-02_01-03.csv'
+week = 'week2' #'week1', 'week3'
 brand = 'pizzahut' #pizzahut, dominos
 outputName = brand + '_analysis_'+ week + '.csv'
 
