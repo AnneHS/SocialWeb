@@ -76,10 +76,18 @@ def Analyse(week, fileName):
 
     return tweet_count, pos_count, neg_count
 
+
+# Change week and filename here
+week = 'week2'
+
+fileNameDominos = 'week2(02_08)dominos_data.csv'
+fileNamePizzaHut = 'week2(02_08)pizzahut_data.csv'
+
 # Parameters
 week = 'week1'
 fileNameDominos = 'week1(24_01)dominos_data.csv'
 fileNamePizzaHut = 'week1(24_01)pizzahut_data.csv'
+
 
 # Get Tweet nfo
 dTweets, dPos, dNeg = Analyse(week, fileNameDominos)
