@@ -21,7 +21,7 @@ The plots are saved to: ../SocialWeb/plots/weeki
 '''
 
 # parameters
-fileName= 'week1(24_01)dominos_data.csv'  #'week1(24_01)dominos_data.csv'
+fileName= 'week1(24_01)pizzahut_data.csv'  #'week1(24_01)dominos_data.csv'
 week = 'week1'
 
 # get csv path
