@@ -23,9 +23,9 @@ The plots are saved to: ../SocialWeb/plots/weeki
 The csv file is saved to: ../SocialWeb/data/weeki
 '''
 # parameters
-fileName=  'PizzaHutOfficial02-03_08-03.csv'   #'DominosOfficial24-02_01-03.csv' , 'PizzaHutOfficial24-02_01-03.csv'
-week = 'week2' #'week1', 'week3'
-brand = 'pizzahut' #pizzahut, dominos
+fileName=  'DominosOfficial(09_03_15_03).csv'   #'DominosOfficial24-02_01-03.csv' , 'PizzaHutOfficial24-02_01-03.csv'
+week = 'week3' #'week1', 'week3'
+brand = 'dominos' #pizzahut, dominos
 outputName = brand + '_analysis_'+ week + '.csv'
 
 #'OfficialAnalysisTest.csv'
@@ -44,8 +44,8 @@ plotPath = os.path.join(fileDir, filePath) #'../data/test.csv')
 plotPath = os.path.abspath(os.path.realpath(plotPath))
 
 # NUMBER OF TWEETS PER WEEKDAY
-df = pd.read_csv(csvPath)
-df.columns=['Time','Post_id','Tweet','Retweet count','Like count'] # needed because some of the older csv-files don't have headers
+df = pd.read_csv(csvPath, delimiter = ';')
+df.columns=['Time','Post_id','Tweet','Retweet count','Like count'] # needed because some of the older csv-files don't have header
 dates = df['Time']
 
 weekday=[]
@@ -121,8 +121,6 @@ plotName = brand +'_retweetCount.png'
 plt.savefig(os.path.join(plotPath, plotName))
 plt.show()
 #plt.plot(list(retweet_count.keys()),list(retweet_count.values()))
-
-
 
 # NUMBER OF LIKES PER WEEKDAY
 Monday_like = 0
