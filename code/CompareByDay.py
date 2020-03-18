@@ -22,9 +22,18 @@ The plots are saved to: ../SocialWeb/plots/weeki
 
 def Analyse(week, fileName):
     # read file
+    print(fileName)
     filePath = '..//data//' + week + '//' + fileName
-    rawData = pd.read_csv(filePath, sep=';', error_bad_lines=False)
-    data = rawData
+    if fileName != 'week3(09_15)pizzahut_data.csv':
+        df = pd.read_csv(filePath, delimiter=';', error_bad_lines=False)
+        #df.columns=['time','id','text','sentiment']
+    else:
+        df = pd.read_csv(filePath, error_bad_lines=False, engine='python')
+        for entry in df:
+            print(entry)
+
+    print(df.columns.values.tolist())
+    data = df
 
     # set time to weekdays - Monday to Friday
     date = data['time']
@@ -79,9 +88,9 @@ def Analyse(week, fileName):
 
 # Change week and filename here
 # Parameters
-week = 'week2'
-fileNameDominos = 'week2(02_08)dominos_data.csv'
-fileNamePizzaHut = 'week2(02_08)pizzahut_data.csv'
+week = 'week3'
+fileNameDominos = 'week3(09_15)dominos_data.csv'
+fileNamePizzaHut = 'week3(09_15)pizzahut_data.csv'
 
 
 # Get Tweet nfo
