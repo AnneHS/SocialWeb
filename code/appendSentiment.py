@@ -6,7 +6,7 @@ from textblob import TextBlob
 '''
 Sentiment analysis of PizzaHut csv using textblob
 '''
-filePath = '../data/week3/week3(09_15)pizzahut_data.csv'
+filePath = '../data/week3/pizzahutdata.csv'
 data = pd.read_csv(filePath, sep=";")
 tweetText = data['text']
 # print(tweetText)
