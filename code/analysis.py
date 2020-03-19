@@ -21,8 +21,8 @@ The plots are saved to: ../SocialWeb/plots/weeki
 '''
 
 # parameters
-fileName= 'week1(24_01)pizzahut_data.csv'  #'week1(24_01)dominos_data.csv'
-week = 'week1'
+fileName= 'overall(0224_0315)pizzahut_data.csv'  #'week1(24_01)dominos_data.csv'
+week = 'week123'
 
 # get csv path
 filePath='..//data//' + week + '//' + fileName
@@ -32,7 +32,7 @@ csvPath = os.path.abspath(os.path.realpath(csvPath))
 print(csvPath)
 
 # read tweet text
-data = pd.read_csv(csvPath, engine='python', names=['time', 'id', 'text'], header=None)
+data = pd.read_csv(csvPath, sep=';', engine='python', names=['time', 'id', 'text'], header=None)
 tweetText = data['text']
 
 
