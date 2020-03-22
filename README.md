@@ -24,6 +24,10 @@ There is where we put our preprocessing code.
 
 `analysisOfficial.py` - analyse the tweets from the official account
 
+`compareOfficial.py` - plots to compare Official accounts of dominos & pizzahut
+
+`compareByDay.py` - compare public tweets of 2 brands and create plots for them
+
 ## 2. data
 There is where we save our .csv files extracted from twitter for later analysis.
 
