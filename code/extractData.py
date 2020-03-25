@@ -30,11 +30,11 @@ assert sys.version_info >= (3, 6)
 
 # parameters
 search_words = 'dominos' #pizzahut, dominos
-date_since = '2020-03-09'
-date_until = '2020-03-16'
-week= 'week3' #'week2', 'week3'
+date_since = '2020-03-23'
+date_until = '2020-03-24'
+week= 'week4' #'week2', 'week3'
 
-csvName='..//data//' + week + '//dominosdata.csv'
+csvName='..//data//' + week + '//dominosdata23.csv'
 
 # csv path
 fileDir=fileDir = os.path.dirname(os.path.realpath('__file__'))
@@ -60,7 +60,7 @@ api = tw.API(auth, wait_on_rate_limit=True)
 tweets_time = []
 tweets_id = []
 tweets_text = []
-tweets = tw.Cursor(api.search, q=search_words, lang="en",since=date_since, until=date_until).items(10000)
+tweets = tw.Cursor(api.search, q=search_words, lang="en",since=date_since, until=date_until).items(2000)
 for tweets in tweets:
     tweets_time.append(tweets.created_at)
     tweets_id.append(tweets.id)

@@ -25,11 +25,11 @@ def clean_tweet(tweet):
     return ' '.join(re.sub("(@[A-Za-z0-9]+)|([^0-9A-Za-z \t])|(\w+:\/\/\S+)", "", tweet).split())
 
 # parameters
-date_since = '2020-01-01'
-date_until = '2020-03-16'
-brand = 'dominos'
-week = 'week3' #'week2', 'week3'
-csvName = 'overallDominosOfficial.csv'
+date_since = '2020-02-24'
+date_until = '2020-03-23'
+brand = 'pizzahut'
+week = 'week4' #'week2', 'week3'
+csvName = 'overallPizzahutOfficial.csv'
 account_list = [brand]
 
 # path for csv file
