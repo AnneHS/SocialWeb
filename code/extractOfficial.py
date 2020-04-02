@@ -27,9 +27,9 @@ def clean_tweet(tweet):
 # parameters
 date_since = '2020-02-24'
 date_until = '2020-03-23'
-brand = 'pizzahut'
+brand = 'dominos'
 week = 'week4' #'week2', 'week3'
-csvName = 'overallPizzahutOfficial.csv'
+csvName = 'overallDominosOfficial.csv'
 account_list = [brand]
 
 # path for csv file

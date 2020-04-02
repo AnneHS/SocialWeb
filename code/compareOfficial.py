@@ -18,7 +18,7 @@ The plots are saved to: ../SocialWeb/plots/overall
 '''
 
 # parameter
-weeks = ['week1', 'week2', 'week3']
+weeks = ['week1', 'week2', 'week3', 'week4']
 
 # to keep track of overall Dominos data
 dominosTweets = {'Monday': 0, 'Tuesday': 0, 'Wednesday':0, 'Thursday':0, 'Friday':0, 'Saturday':0, 'Sunday':0}

@@ -88,9 +88,9 @@ def Analyse(week, fileName):
 
 # Change week and filename here
 # Parameters
-week = 'week1'
-fileNameDominos = 'week1(24_01)dominos_data.csv'
-fileNamePizzaHut = 'week1(24_01)pizzahut_data.csv'
+week = 'week4'
+fileNameDominos = 'week4(16_22)dominos_data.csv'
+fileNamePizzaHut = 'week4(16_22)pizzahut_data.csv'
 
 
 # Get Tweet nfo

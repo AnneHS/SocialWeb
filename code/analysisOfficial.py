@@ -21,9 +21,9 @@ Specify four parameters before running this file:
 The csv file is saved to: ../SocialWeb/data/weeki
 '''
 # parameters
-fileName=  'DominosOfficial(09_03_15_03).csv'   #'DominosOfficial24-02_01-03.csv' , 'PizzaHutOfficial24-02_01-03.csv'
-week = 'week3' #'week1', 'week3'
-brand = 'dominos' #pizzahut, dominos
+fileName=  'PizzahutOfficial(16_03_22_03).csv'   #'DominosOfficial24-02_01-03.csv' , 'PizzaHutOfficial24-02_01-03.csv'
+week = 'week4' #'week1', 'week3'
+brand = 'pizzahut' #pizzahut, dominos
 outputName = brand + '_analysis_'+ week + '.csv'
 
 # get csv path
