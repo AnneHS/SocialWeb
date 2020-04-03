@@ -4,7 +4,7 @@ Social media food battle: Pizza Hut and Domino’s sentiment analysis
 Group 8
 
 Anne Hoogerduijn Starting || Timo van Milligen || Xiaoqing Han || Panpan Wu || Yizhen Zhao
- 
+
 # Type of project
 
 Data analysis
@@ -35,7 +35,7 @@ There is where we save our .csv files extracted from twitter for later analysis.
 There is where we save the results of analyzed tweets. 
 
 ## 4. old
-There is where we put the older code, files for backup.
+There is where we put the older codes, files for backup.
 
 
 
